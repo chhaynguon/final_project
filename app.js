@@ -1,5 +1,8 @@
 const express = require('express');
 const upload = require('express-fileupload');
+const dotenv = require('dotenv');
+dotenv.config({ path: './.env' });
+
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 
@@ -19,4 +22,4 @@ app.use(userRoutes);
 //Admin
 app.use(adminRoutes);
 
-app.listen(3000);
+app.listen(process.env.PORT);
